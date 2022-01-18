@@ -46,7 +46,7 @@
                                <a href="" class="badge badge-light-primary">{{ $category -> name }}</a>
                             @endforeach
                         </td>
-                        <td>{{ $post -> user -> full_name }}</td>
+                        <td>{{ $post -> user -> getFullName() }}</td>
                         <td class="fs-7">{{ $post -> created_at -> diffForHumans() }}</td>
                         <td>{{ $post -> views }}</td>
                         <td class="fs-7">{{ ucFirst($post -> status) }}</td>

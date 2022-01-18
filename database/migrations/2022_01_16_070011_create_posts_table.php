@@ -18,8 +18,8 @@ class CreatePostsTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->string('slug');
-            $table->string('excerpt');
-            $table->string('description');
+            $table->text('excerpt');
+            $table->longText('description');
             $table->string('image')->nullable();
             $table->integer('views')->default(0);
             $table->string('status');
