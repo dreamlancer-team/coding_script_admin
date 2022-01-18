@@ -5,9 +5,10 @@ use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('admin.welcome');
-});
+require __DIR__ . '/auth.php';
 
-Route::resource('/category', CategoryController::class);
-Route::resource('/post', PostController::class);
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::view('/dashboard', 'admin.dashboard');
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/post', PostController::class);
+});

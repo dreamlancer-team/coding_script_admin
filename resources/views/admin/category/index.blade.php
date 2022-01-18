@@ -36,7 +36,7 @@
                         <td>
                             <span class="badge badge-light-primary">{{ $category -> posts_count }}</span>
                         </td>
-                        <td>{{ $category -> user -> full_name }}</td>
+                        <td>{{ $category -> user -> getFullName() }}</td>
                         <td>
                             @include('admin.category.edit')
                             @include('admin.category.delete')

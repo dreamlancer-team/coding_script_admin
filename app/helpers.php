@@ -10,18 +10,57 @@ use Illuminate\Support\Str;
 /**
  * @return int
  */
-function getLoggedInUserId()
-{
-    // return Auth::id();
-    return 1;
+if (!function_exists('getLoggedInUserId')) {
+    function getLoggedInUserId()
+    {
+        return Auth::id();
+    }
 }
 
 /**
  * @return User
  */
-function getLoggedInUser()
-{
-    return Auth::user();
+if (!function_exists('getLoggedInUser')) {
+    function getLoggedInUser()
+    {
+        return Auth::user();
+    }
+}
+
+/**
+ * return user full name
+ * 
+ * @return String
+ */
+if (!function_exists('getLoggedInUserFullName')) {
+    function getLoggedInUserFullName()
+    {
+        return ucfirst(Auth::user()->first_name) . ' ' . Auth::user()->last_name;
+    }
+}
+
+/**
+ * return user name
+ * 
+ * @return String
+ */
+if (!function_exists('getLoggedInUserName')) {
+    function getLoggedInUserName()
+    {
+        return ucfirst(Auth::user()->first_name);
+    }
+}
+
+/**
+ * return user email
+ * 
+ * @return String
+ */
+if (!function_exists('getLoggedInUserEmail')) {
+    function getLoggedInUserEmail()
+    {
+        return Auth::user()->email;
+    }
 }
 
 /**
