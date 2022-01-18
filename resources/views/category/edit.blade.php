@@ -1,4 +1,4 @@
-<a href="{{route('category.edit',$category->slug)}}" class="btn btn-icon btn-bg-light btn-active-color-success btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modal-edit-category{{ $category->slug }}" id="modal-edit">
+<a href="{{route('category.edit',$category->slug)}}" class="btn btn-icon btn-light-success btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modal-edit-category{{ $category->slug }}" id="modal-edit">
     <i class="fas fa-edit"></i>
 </a>
 <div class="modal fade" tabindex="-1" id="modal-edit-category{{ $category->slug}}">
