@@ -1,4 +1,4 @@
-<a href="category/{{ $category -> slug }}" class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1" onclick="event.preventDefault(); document.getElementById('delete-category-{{ $category -> id }}').submit();">
+<a href="category/{{ $category -> slug }}" class="btn btn-icon btn-light-danger btn-sm me-1" onclick="event.preventDefault(); document.getElementById('delete-category-{{ $category -> id }}').submit();">
     <i class="fas fa-trash"></i>
 </a>
 <form id="delete-category-{{ $category->id }}" method="post"

@@ -12,7 +12,9 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::withCount('posts')
+            ->with('user:id,first_name,last_name')
+            ->get();
         return view('category.index', compact('categories'));
     }
 
@@ -48,6 +50,10 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        if ($category->posts()->count()) {
+            return back()->with('error', 'Cannot delete: this category has posts');
+        }
+
         $category->delete();
         return back()->with('success', 'Category deleted successfully!');;
     }

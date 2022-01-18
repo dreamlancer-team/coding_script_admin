@@ -13,7 +13,14 @@ class Category extends Model
 
     public function posts()
     {
-        return $this->belongsToMany(Post::class, 'category_posts')->orderBy('created_at', 'DESC')->paginate(5);
+        return $this->belongsToMany(Post::class, 'category_posts')
+            ->using(CategoryPost::class)
+            ->withPivot('post_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function getRouteKeyName()

@@ -19,10 +19,10 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('excerpt');
-            $table->string('discription');
+            $table->string('description');
             $table->string('image')->nullable();
             $table->integer('views')->default(0);
-            $table->string('status')->default('draft');
+            $table->string('status');
             $table->timestamps();
         });
     }

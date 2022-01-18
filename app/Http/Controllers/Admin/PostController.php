@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -16,7 +17,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::with(['categories:id,name', 'user:id,first_name,last_name'])->latest()->get();
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -26,7 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::select('id', 'name')->get();
+        return view('post.create', compact('categories'));
     }
 
     /**
@@ -37,7 +40,28 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $thumbnail = null;
+        if ($request->hasFile('thumbnail')) {
+            $request->thumbnail->store('blog', 'public');
+            $thumbnail = $request->thumbnail->hashName();
+        }
+
+        if ($request->validated()) {
+            $post = Post::create([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'excerpt' => $request->excerpt,
+                'description' => $request->description,
+                'image' => $thumbnail,
+                'user_id' => getLoggedInUserId(),
+                'status' => $request->submit
+            ]);
+
+            $post->categories()->sync($request->category);
+
+
+            return redirect()->route('post.index')->with('success', 'Post created successfully');
+        }
     }
 
     /**
@@ -82,6 +106,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        $post->categories()->detach();
+        return back()->with('success', 'Post deleted successfully');
     }
 }

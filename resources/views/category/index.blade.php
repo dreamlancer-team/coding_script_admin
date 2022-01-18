@@ -22,6 +22,8 @@
                         <th>#</th>
                         <th>Name</th>
                         <th>Slug</th>
+                        <th>Posts Count</th>
+                        <td>Created By</td>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -31,6 +33,10 @@
                         <td>{{ $loop -> index + 1 }}</td>
                         <td>{{ $category -> name }}</td>
                         <td>{{ $category -> slug }}</td>
+                        <td>
+                            <span class="badge badge-light-primary">{{ $category -> posts_count }}</span>
+                        </td>
+                        <td>{{ $category -> user -> full_name }}</td>
                         <td>
                             @include('category.edit')
                             @include('category.delete')
