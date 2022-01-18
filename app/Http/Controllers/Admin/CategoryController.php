@@ -15,7 +15,7 @@ class CategoryController extends Controller
         $categories = Category::withCount('posts')
             ->with('user:id,first_name,last_name')
             ->get();
-        return view('category.index', compact('categories'));
+        return view('admin.category.index', compact('categories'));
     }
 
     public function store(StoreCategoryRequest $request)

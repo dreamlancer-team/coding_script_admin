@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('admin.layout.app')
 
 @push('styles')
     <link rel="stylesheet" href="http://assets.dreamlancer.in/assets/plugins/custom/datatables/datatables.bundle.css">
@@ -13,7 +13,7 @@
                     New
                 </button>
             </div>
-            @include('category.create')
+            @include('admin.category.create')
         </div>
         <div class="card-body">
             <table id="category_table" class="table table-row-bordered gy-5 gs-7 border rounded">
@@ -38,8 +38,8 @@
                         </td>
                         <td>{{ $category -> user -> full_name }}</td>
                         <td>
-                            @include('category.edit')
-                            @include('category.delete')
+                            @include('admin.category.edit')
+                            @include('admin.category.delete')
                         </td>
                     </tr>
                     @endforeach

@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta charset="utf-8" />
 		<link rel="shortcut icon" href="http://assets.dreamlancer.in/assets/media/logos/favicon.ico" />
-        @include('layout.styles')
+        @include('admin.layout.styles')
 		<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 	</head>
 	<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
 		<div class="d-flex flex-column flex-root">
 			<div class="page d-flex flex-row flex-column-fluid">
-				@include('layout.sidebar')
+				@include('admin.layout.sidebar')
 				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-					@include('layout.nav')
+					@include('admin.layout.nav')
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 						<div class="post d-flex flex-column-fluid" id="kt_post">
 							<div id="kt_content_container" class="container-xxl">
@@ -22,7 +22,7 @@
 						</div>
 						
 					</div>
-					@include('layout.footer')
+					@include('admin.layout.footer')
 				</div>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 			</span>
 		</div>
 
-		@include('layout.scripts')
-		@include('inc/message')
+		@include('admin.layout.scripts')
+		@include('admin.inc/message')
 	</body>
 </html>

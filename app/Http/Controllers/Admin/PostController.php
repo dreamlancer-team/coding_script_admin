@@ -18,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::with(['categories:id,name', 'user:id,first_name,last_name'])->latest()->get();
-        return view('post.index', compact('posts'));
+        return view('admin.post.index', compact('posts'));
     }
 
     /**
@@ -29,7 +29,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::select('id', 'name')->get();
-        return view('post.create', compact('categories'));
+        return view('admin.post.create', compact('categories'));
     }
 
     /**

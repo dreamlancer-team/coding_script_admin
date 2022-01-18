@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('admin.layout.app')
 
 @push('styles')
     <link rel="stylesheet" href="http://assets.dreamlancer.in/assets/plugins/custom/datatables/datatables.bundle.css">
@@ -51,9 +51,9 @@
                         <td>{{ $post -> views }}</td>
                         <td class="fs-7">{{ ucFirst($post -> status) }}</td>
                         <td class="d-flex justify-content-between">
-                            @include('post.show')
-                            @include('post.edit')
-                            @include('post.delete')
+                            @include('admin.post.show')
+                            @include('admin.post.edit')
+                            @include('admin.post.delete')
                         </td>
                     </tr>
                     @endforeach

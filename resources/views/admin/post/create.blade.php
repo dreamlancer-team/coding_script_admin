@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('admin.layout.app')
 
 @push('main')
 <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
@@ -60,13 +60,13 @@
 
         </div>
         <div class="col-md-4">
-            @include('post.partials.publish')
-            @include('post.partials.category')
+            @include('admin.post.partials.publish')
+            @include('admin.post.partials.category')
         </div>
     </div>
 </form>
 
-@include('category.create')
+@include('admin.category.create')
 @endpush
 
 @push('scripts')
