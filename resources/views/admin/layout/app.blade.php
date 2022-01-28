@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta charset="utf-8" />
 		<link rel="shortcut icon" href="http://assets.dreamlancer.in/assets/media/logos/favicon.ico" />
-        @include('admin.layout.styles')
+        @include('common.styles')
 		<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 	</head>
 	<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
@@ -36,7 +36,7 @@
 			</span>
 		</div>
 
-		@include('admin.layout.scripts')
-		@include('admin.inc/message')
+		@include('common.scripts')
+		@include('admin.inc.message')
 	</body>
 </html>
