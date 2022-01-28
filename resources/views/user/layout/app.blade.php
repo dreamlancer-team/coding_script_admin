@@ -21,8 +21,8 @@
 			<div class="page d-flex flex-row flex-column-fluid">
 				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
 					@include('user.layout.header')
-					<div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
-						<div class="content flex-row-fluid" id="kt_content">
+					<div id="kt_content_container" class="px-20 d-flex flex-column-fluid align-items-start container-xxl">
+						<div class="content flex-row-fluid mt-10 mx-20" id="kt_content">
 							@stack('main')
 						</div>
 					</div>

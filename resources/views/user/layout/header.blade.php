@@ -12,20 +12,14 @@
         </div>
         <div class="header-logo me-5 me-md-10 flex-grow-1 flex-lg-grow-0">
             <a href="../../demo2/dist/index.html">
-                <img alt="Logo" src="http://assets.dreamlancer.in/assets/media/logos/logo-4.png" class="logo-default h-25px" />
-                <img alt="Logo" src="http://assets.dreamlancer.in/assets/media/logos/logo-5.png" class="logo-sticky h-25px" />
+                <img alt="Logo" src="http://assets.dreamlancer.in/assets/media/logos/logo-1.svg" class="logo-default h-25px" />
             </a>
         </div>
         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
             <div class="d-flex align-items-stretch" id="kt_header_nav">
                 <div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
                     <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
-                        <div class="menu-item me-lg-1">
-                            <a class="menu-link py-3" href="../../demo2/dist/index.html">
-                                <span class="menu-title">Dashboard</span>
-                                <span class="menu-arrow d-lg-none"></span>
-                            </a>
-                        </div>
+                        <x-menu-item name='Home' route='/'></x-menu-item>
                     </div>
                 </div>
             </div>
