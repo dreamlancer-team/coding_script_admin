@@ -4,11 +4,11 @@
 <div class="card col-md-8">
     <div class="card-body">
         @forelse ($posts as $post)
-                <a href="#">
+                <a href="{{ route('post', $post -> slug) }}">
                     <img class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-300px w-100" src="/storage/blog/{{ $post -> image }}" alt="{{ $post -> title }}" />
                 </a>
                 <div class="my-6">
-                    <a href="#" class="fw-bolder text-dark mb-4 fs-2 lh-base text-hover-primary">{{ $post -> title }}</a>
+                    <a href="{{ route('post', $post -> slug) }}" class="fw-bolder text-dark mb-4 fs-2 lh-base text-hover-primary">{{ $post -> title }}</a>
                     <div class="fw-bold fs-5 mt-4 text-gray-600 text-dark">{{ $post -> excerpt }}</div>
                 </div>
                 <div class="d-flex flex-stack flex-wrap">

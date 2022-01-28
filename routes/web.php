@@ -20,4 +20,4 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 /// User site
 
 Route::get('/', [BlogController::class, 'index']);
-Route::get('/{post}', [UserPostController::class, 'index']);
+Route::get('/{post}', [UserPostController::class, 'show'])->name('post');
